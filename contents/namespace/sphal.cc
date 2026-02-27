@@ -63,6 +63,12 @@ Namespace BuildSphalNamespace([[maybe_unused]] const Context& ctx) {
     ns.GetLink(ctx.GetSystemNamespaceName()).AddSharedLib("libft2.so");
   }
 
+  // libhoudini
+  ns.AddSearchPath("/system/${LIB}/arm");
+  ns.AddPermittedPath("/system/${LIB}/arm");
+  ns.AddSearchPath("/system/${LIB}/arm64");
+  ns.AddPermittedPath("/system/${LIB}/arm64");
+
   AddLlndkLibraries(ctx, &ns, VndkUserPartition::Vendor);
 
   if (ctx.IsApexBinaryConfig()) {
