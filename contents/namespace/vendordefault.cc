@@ -41,6 +41,7 @@ Namespace BuildVendorNamespace([[maybe_unused]] const Context& ctx,
   Namespace ns(name, /*is_isolated=*/true, /*is_visible=*/true);
 
   ns.AddSearchPath("/odm/${LIB}");
+  ns.AddSearchPath("/odm_extra/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}/hw");
   ns.AddSearchPath("/vendor/${LIB}/egl");
@@ -49,6 +50,7 @@ Namespace BuildVendorNamespace([[maybe_unused]] const Context& ctx,
   ns.AddSearchPath("/vendor_extra/${LIB}/egl");
 
   ns.AddPermittedPath("/odm");
+  ns.AddPermittedPath("/odm_extra/${LIB}");
   ns.AddPermittedPath("/vendor");
   ns.AddPermittedPath("/vendor_extra");
   ns.AddPermittedPath("/system/vendor");
