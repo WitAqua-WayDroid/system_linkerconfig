@@ -32,6 +32,7 @@ Namespace BuildUnrestrictedDefaultNamespace([[maybe_unused]] const Context& ctx)
   ns.AddSearchPath(Var("SYSTEM_EXT") + "/${LIB}");
   ns.AddSearchPath("/odm/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}");
+  ns.AddSearchPath("/vendor_extra/${LIB}");
   ns.AddSearchPath(Var("PRODUCT") + "/${LIB}");
 
   ns.AddRequires(ctx.GetSystemRequireLibs());

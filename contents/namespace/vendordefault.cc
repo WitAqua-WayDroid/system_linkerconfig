@@ -44,9 +44,13 @@ Namespace BuildVendorNamespace([[maybe_unused]] const Context& ctx,
   ns.AddSearchPath("/vendor/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}/hw");
   ns.AddSearchPath("/vendor/${LIB}/egl");
+  ns.AddSearchPath("/vendor_extra/${LIB}");
+  ns.AddSearchPath("/vendor_extra/${LIB}/hw");
+  ns.AddSearchPath("/vendor_extra/${LIB}/egl");
 
   ns.AddPermittedPath("/odm");
   ns.AddPermittedPath("/vendor");
+  ns.AddPermittedPath("/vendor_extra");
   ns.AddPermittedPath("/system/vendor");
 
   ns.GetLink("rs").AddSharedLib("libRS_internal.so");
