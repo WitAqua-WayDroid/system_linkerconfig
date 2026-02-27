@@ -42,6 +42,7 @@ Namespace BuildSphalNamespace([[maybe_unused]] const Context& ctx) {
                /*is_isolated=*/!ctx.IsUnrestrictedSection(),
                /*is_visible=*/true);
   ns.AddSearchPath("/odm/${LIB}");
+  ns.AddSearchPath("/odm_extra/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}/egl");
   ns.AddSearchPath("/vendor/${LIB}/hw");
@@ -50,6 +51,7 @@ Namespace BuildSphalNamespace([[maybe_unused]] const Context& ctx) {
   ns.AddSearchPath("/vendor_extra/${LIB}/hw");
 
   ns.AddPermittedPath("/odm/${LIB}");
+  ns.AddPermittedPath("/odm_extra/${LIB}");
   ns.AddPermittedPath("/vendor/${LIB}");
   ns.AddPermittedPath("/vendor_extra/${LIB}");
   ns.AddPermittedPath("/vendor/odm/${LIB}");
