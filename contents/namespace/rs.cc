@@ -38,6 +38,7 @@ Namespace BuildRsNamespace([[maybe_unused]] const Context& ctx) {
       android::linkerconfig::modules::IsVendorVndkVersionDefined();
 
   ns.AddSearchPath("/odm/${LIB}/vndk-sp");
+  ns.AddSearchPath("/odm_extra/${LIB}/vndk-sp");
   ns.AddSearchPath("/vendor/${LIB}/vndk-sp");
   ns.AddSearchPath("/vendor_extra/${LIB}/vndk-sp");
   if (vendor_vndk_enabled) {
@@ -45,10 +46,12 @@ Namespace BuildRsNamespace([[maybe_unused]] const Context& ctx) {
                      "/${LIB}");
   }
   ns.AddSearchPath("/odm/${LIB}");
+  ns.AddSearchPath("/odm_extra/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}");
   ns.AddSearchPath("/vendor_extra/${LIB}");
 
   ns.AddPermittedPath("/odm/${LIB}");
+  ns.AddPermittedPath("/odm_extra/${LIB}");
   ns.AddPermittedPath("/vendor/${LIB}");
   ns.AddPermittedPath("/vendor_extra/${LIB}");
   ns.AddPermittedPath("/system/vendor/${LIB}");

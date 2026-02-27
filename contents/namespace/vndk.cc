@@ -61,7 +61,7 @@ Namespace BuildVndkNamespace([[maybe_unused]] const Context& ctx,
     vndk_version = Var("PRODUCT_VNDK_VERSION");
   } else {
     // default for vendor
-    lib_paths = {"/odm/${LIB}", "/vendor/${LIB}", "/vendor_extra/${LIB}"};
+    lib_paths = {"/odm/${LIB}", "/odm_extra/${LIB}", "/vendor/${LIB}", "/vendor_extra/${LIB}"};
     vndk_version = Var("VENDOR_VNDK_VERSION");
   }
 
@@ -85,6 +85,8 @@ Namespace BuildVndkNamespace([[maybe_unused]] const Context& ctx,
     // It is for vendor sp-hal
     ns.AddPermittedPath("/odm/${LIB}/hw");
     ns.AddPermittedPath("/odm/${LIB}/egl");
+    ns.AddPermittedPath("/odm_extra/${LIB}/hw");
+    ns.AddPermittedPath("/odm_extra/${LIB}/egl");
     ns.AddPermittedPath("/vendor/${LIB}/hw");
     ns.AddPermittedPath("/vendor/${LIB}/egl");
     ns.AddPermittedPath("/vendor_extra/${LIB}/hw");
