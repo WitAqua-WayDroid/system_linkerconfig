@@ -71,6 +71,11 @@ void SetupSystemPermittedPaths(Namespace* ns) {
       "/mnt/expand",
       "/apex/com.android.runtime/${LIB}/bionic",
       "/system/${LIB}/bootstrap",
+
+      // libhoudini
+      "/system/${LIB}",
+      "/system/${LIB}/arm",
+      "/system/${LIB}/arm64",
   };
 
   for (const std::string& path : permitted_paths) {
