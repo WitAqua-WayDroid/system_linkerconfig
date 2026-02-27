@@ -39,15 +39,18 @@ Namespace BuildRsNamespace([[maybe_unused]] const Context& ctx) {
 
   ns.AddSearchPath("/odm/${LIB}/vndk-sp");
   ns.AddSearchPath("/vendor/${LIB}/vndk-sp");
+  ns.AddSearchPath("/vendor_extra/${LIB}/vndk-sp");
   if (vendor_vndk_enabled) {
     ns.AddSearchPath("/apex/com.android.vndk.v" + Var("VENDOR_VNDK_VERSION") +
                      "/${LIB}");
   }
   ns.AddSearchPath("/odm/${LIB}");
   ns.AddSearchPath("/vendor/${LIB}");
+  ns.AddSearchPath("/vendor_extra/${LIB}");
 
   ns.AddPermittedPath("/odm/${LIB}");
   ns.AddPermittedPath("/vendor/${LIB}");
+  ns.AddPermittedPath("/vendor_extra/${LIB}");
   ns.AddPermittedPath("/system/vendor/${LIB}");
   ns.AddPermittedPath("/data");
 
